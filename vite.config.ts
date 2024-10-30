@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  plugins: [react()],
-  base: './', // Ensures relative paths in the production build
-});
+export default {
+  build: {
+    rollupOptions: {
+      external: ['/src/main.tsx']
+    }
+  }
+}
